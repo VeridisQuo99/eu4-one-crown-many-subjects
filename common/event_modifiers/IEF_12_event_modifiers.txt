@@ -1,0 +1,100 @@
+##################################################################################################
+# scriptable and usable for event-system below.
+##################################################################################################
+
+cannot_form_alliances_royal = {
+	liberty_desire = 10
+}
+# 0-2000 Dev Aralığı (Ekstra Sertleştirilmiş Erken Oyun)
+crown_protector_scaling_01 = { governing_capacity_modifier = -0.02 }   # 0-100 dev (-2.00%)
+crown_protector_scaling_02 = { governing_capacity_modifier = -0.05 }   # 100-300 dev (-5.00%)
+crown_protector_scaling_03 = { governing_capacity_modifier = -0.08 }   # 300-500 dev (-8.00%)
+crown_protector_scaling_04 = { governing_capacity_modifier = -0.11 }   # 500-700 dev (-11.00%)
+crown_protector_scaling_05 = { governing_capacity_modifier = -0.14 }   # 700-900 dev (-14.00%)
+crown_protector_scaling_06 = { governing_capacity_modifier = -0.17 }   # 900-1100 dev (-17.00%)
+crown_protector_scaling_07 = { governing_capacity_modifier = -0.20 }   # 1100-1300 dev (-20.00%)
+crown_protector_scaling_08 = { governing_capacity_modifier = -0.24 }   # 1300-1500 dev (-24.00%)
+crown_protector_scaling_09 = { governing_capacity_modifier = -0.28 }   # 1500-1700 dev (-28.00%)
+crown_protector_scaling_10 = { governing_capacity_modifier = -0.32 }   # 1700-1900 dev (-32.00%)
+crown_protector_scaling_11 = { governing_capacity_modifier = -0.35 }   # 1900-2000 dev (-35.00%)
+
+# 2000-5000 Dev Aralığı (Hedef: -60%)
+crown_protector_scaling_12 = { governing_capacity_modifier = -0.39 }   # 2000-2500 dev
+crown_protector_scaling_13 = { governing_capacity_modifier = -0.43 }   # 2500-3000 dev
+crown_protector_scaling_14 = { governing_capacity_modifier = -0.47 }   # 3000-3500 dev
+crown_protector_scaling_15 = { governing_capacity_modifier = -0.51 }   # 3500-4000 dev
+crown_protector_scaling_16 = { governing_capacity_modifier = -0.55 }   # 4000-4500 dev
+crown_protector_scaling_17 = { governing_capacity_modifier = -0.60 }   # 4500-5000 dev
+
+# 5000-20000 Dev Aralığı (Hedef: -85%)
+crown_protector_scaling_18 = { governing_capacity_modifier = -0.62 }   # 5000-6000 dev
+crown_protector_scaling_19 = { governing_capacity_modifier = -0.64 }   # 6000-7000 dev
+crown_protector_scaling_20 = { governing_capacity_modifier = -0.66 }   # 7000-8000 dev
+crown_protector_scaling_21 = { governing_capacity_modifier = -0.68 }   # 8000-9000 dev
+crown_protector_scaling_22 = { governing_capacity_modifier = -0.70 }   # 9000-10000 dev
+crown_protector_scaling_23 = { governing_capacity_modifier = -0.72 }   # 10000-11000 dev
+crown_protector_scaling_24 = { governing_capacity_modifier = -0.74 }   # 11000-12000 dev
+crown_protector_scaling_25 = { governing_capacity_modifier = -0.75 }   # 12000-13000 dev
+crown_protector_scaling_26 = { governing_capacity_modifier = -0.77 }   # 13000-14000 dev
+crown_protector_scaling_27 = { governing_capacity_modifier = -0.79 }   # 14000-15000 dev
+crown_protector_scaling_28 = { governing_capacity_modifier = -0.80 }   # 15000-16000 dev
+crown_protector_scaling_29 = { governing_capacity_modifier = -0.82 }   # 16000-17000 dev
+crown_protector_scaling_30 = { governing_capacity_modifier = -0.83 }   # 17000-18000 dev
+crown_protector_scaling_31 = { governing_capacity_modifier = -0.84 }   # 18000-19000 dev
+crown_protector_scaling_32 = { governing_capacity_modifier = -0.85 }   # 19000-20000 dev
+
+# 20000-50000+ Dev Aralığı (Hedef: -99%)
+crown_protector_scaling_33 = { governing_capacity_modifier = -0.88 }   # 20000-25000 dev
+crown_protector_scaling_34 = { governing_capacity_modifier = -0.91 }   # 25000-30000 dev
+crown_protector_scaling_35 = { governing_capacity_modifier = -0.94 }   # 30000-35000 dev
+crown_protector_scaling_36 = { governing_capacity_modifier = -0.96 }   # 35000-40000 dev
+crown_protector_scaling_37 = { governing_capacity_modifier = -0.98 }   # 40000-45000 dev
+crown_protector_scaling_38 = { governing_capacity_modifier = -0.99 }   # 45000-50000 dev
+crown_protector_scaling_39 = { governing_capacity_modifier = -0.99 }   # 50000+ dev
+
+# 0-2000 Dev Aralığı
+crown_protector_merchant_scaling_01 = { merchants = 1 }  # 0-100 dev
+crown_protector_merchant_scaling_02 = { merchants = 2 }  # 100-300 dev
+crown_protector_merchant_scaling_03 = { merchants = 3 }  # 300-500 dev
+crown_protector_merchant_scaling_04 = { merchants = 4 }  # 500-700 dev
+crown_protector_merchant_scaling_05 = { merchants = 5 }  # 700-900 dev
+crown_protector_merchant_scaling_06 = { merchants = 6 }  # 900-1100 dev
+crown_protector_merchant_scaling_07 = { merchants = 7 }  # 1100-1300 dev
+crown_protector_merchant_scaling_08 = { merchants = 8 }  # 1300-1500 dev
+crown_protector_merchant_scaling_09 = { merchants = 9 }  # 1500-1700 dev
+crown_protector_merchant_scaling_10 = { merchants = 10 } # 1700-1900 dev
+crown_protector_merchant_scaling_11 = { merchants = 11 } # 1900-2000 dev
+
+# 2000-5000 Dev Aralığı
+crown_protector_merchant_scaling_12 = { merchants = 12 } # 2000-2500 dev
+crown_protector_merchant_scaling_13 = { merchants = 13 } # 2500-3000 dev
+crown_protector_merchant_scaling_14 = { merchants = 14 } # 3000-3500 dev
+crown_protector_merchant_scaling_15 = { merchants = 15 } # 3500-4000 dev
+crown_protector_merchant_scaling_16 = { merchants = 16 } # 4000-4500 dev
+crown_protector_merchant_scaling_17 = { merchants = 17 } # 4500-5000 dev
+
+# 5000-20000 Dev Aralığı
+crown_protector_merchant_scaling_18 = { merchants = 18 } # 5000-6000 dev
+crown_protector_merchant_scaling_19 = { merchants = 19 } # 6000-7000 dev
+crown_protector_merchant_scaling_20 = { merchants = 20 } # 7000-8000 dev
+crown_protector_merchant_scaling_21 = { merchants = 21 } # 8000-9000 dev
+crown_protector_merchant_scaling_22 = { merchants = 22 } # 9000-10000 dev
+crown_protector_merchant_scaling_23 = { merchants = 23 } # 10000-11000 dev
+crown_protector_merchant_scaling_24 = { merchants = 24 } # 11000-12000 dev
+crown_protector_merchant_scaling_25 = { merchants = 25 } # 12000-13000 dev
+crown_protector_merchant_scaling_26 = { merchants = 26 } # 13000-14000 dev
+crown_protector_merchant_scaling_27 = { merchants = 27 } # 14000-15000 dev
+crown_protector_merchant_scaling_28 = { merchants = 28 } # 15000-16000 dev
+crown_protector_merchant_scaling_29 = { merchants = 29 } # 16000-17000 dev
+crown_protector_merchant_scaling_30 = { merchants = 30 } # 17000-18000 dev
+crown_protector_merchant_scaling_31 = { merchants = 31 } # 18000-19000 dev
+crown_protector_merchant_scaling_32 = { merchants = 32 } # 19000-20000 dev
+
+# 20000-50000+ Dev Aralığı
+crown_protector_merchant_scaling_33 = { merchants = 33 } # 20000-25000 dev
+crown_protector_merchant_scaling_34 = { merchants = 34 } # 25000-30000 dev
+crown_protector_merchant_scaling_35 = { merchants = 35 } # 30000-35000 dev
+crown_protector_merchant_scaling_36 = { merchants = 36 } # 35000-40000 dev
+crown_protector_merchant_scaling_37 = { merchants = 37 } # 40000-45000 dev
+crown_protector_merchant_scaling_38 = { merchants = 38 } # 45000-50000 dev
+crown_protector_merchant_scaling_39 = { merchants = 39 } # 50000+ dev

@@ -1,0 +1,96 @@
+crown_protector = {
+	copy_from = commercial_enterprise
+	count = commercial_enterprise
+    sprite =  GFX_icon_commercial_enterprise
+	diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_commercial_enterprise
+	diplomacy_subject_sprite = GFX_icon_diplomacy_am_commercial_enterprise
+	
+	# PROPERTIES
+	has_power_projection = yes
+	takes_diplo_slot = no
+	uses_tariffs = yes
+	extend_trading_range = yes
+	counts_for_borders = yes
+	can_have_subjects_of_other_types = yes
+	transfer_subjects_when_made = yes
+	has_colonial_parent = yes
+	transfer_trade_power = no
+	overlord_can_be_subject = yes
+	can_concentrate_development = yes
+	can_have_great_projects_moved_by_overlord = yes
+	overlord_protects_external = yes
+	should_quit_wars_on_activation = yes
+	overlord_can_attack = no
+	overlord_enforce_peace_attacking = yes
+	can_be_annexed = no
+	can_be_integrated = yes
+	annex_cost_per_development = 6.0					# annex/integrate cost per development
+
+	trust_on_start = 100
+	military_focus = 2
+	opinion_on_subject_integration = 0
+	max_government_rank = 3
+	liberty_desire_development_ratio = 0.025 # SUPER LOYAL
+	relative_power_class = 0
+	pays_overlord = 1.0
+	forcelimit_to_overlord = 0.10						# Percent of subject FL to use as base for modifiers
+	naval_forcelimit_to_overlord = 0.10				# Percent of subject FL to use as base for modifiers
+	manpower_to_overlord = 0.10						# Percent of subject FL to use as base for modifiers
+	sailors_to_overlord = 0.10							# Percent of subject FL to use as base for modifiers
+	
+	# INTERACTIONS
+	# (continuous)
+	embargo_rivals = yes
+	support_loyalists = yes
+	subsidize_armies = yes
+	scutage = yes
+	send_officers = yes
+	divert_trade = yes
+	# (immediate)
+	placate_rulers = yes
+	place_relative_on_throne = no
+	enforce_religion = yes
+	customize_subject = yes
+	replace_governor = yes
+	grant_province = yes
+	enforce_culture = yes
+	siphon_income = yes
+	fortify_march = yes
+	seize_territory = yes
+	start_colonial_war = no
+	grant_core_claim = yes
+	sacrifice_ruler = yes
+	sacrifice_heir = yes
+	increase_tariffs = yes
+	decrease_tariffs = yes
+	takeondebt = yes
+	bestow_gifts = yes
+	send_additional_troops = yes
+	demand_artifacts =no
+	demand_additional_tribute = no
+	force_seppuku = no
+	press_sailors = yes
+	contribute_to_capital = yes
+	force_isolation = no
+	return_land = yes
+	conscript_general = yes
+	knowledge_sharing = yes
+	block_settlement_growth = yes
+	allow_settlement_growth = yes
+	change_colonial_type = no
+	upgrade_subject_type = no
+	seize_court_resources = yes
+	request_extra_levies = yes
+	grant_administrative_autonomy = yes
+	# MODIFIERS
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+
+	# Starting point
+	modifier_subject = {
+		modifier = crown_protector_modifier
+	}
+
+	overlord_opinion_modifier = is_trade_company
+	subject_opinion_modifier = is_trade_company
+}

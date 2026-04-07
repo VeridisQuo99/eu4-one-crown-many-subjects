@@ -1,0 +1,266 @@
+establish_crown_protector = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = { # ONLY FOR PLAYERS
+		ROOT = {
+			ai = no
+		}
+	}
+
+	is_allowed = { 
+		FROM = { 
+			is_subject_of = ROOT # NEED TO BE OUR SUBJECT
+			NOT = {
+				OR = {
+					#vanilla
+					# is_subject_of_type = vassal
+					# is_subject_of_type = march
+					is_subject_of_type = daimyo_vassal
+					# is_subject_of_type = appanage
+					# is_subject_of_type = personal_union
+					# is_subject_of_type = client_vassal
+					# is_subject_of_type = client_march
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = private_enterprise
+					is_subject_of_type = self_governing_colony
+					is_subject_of_type = tributary_state
+					# is_subject_of_type = eyalet
+					# is_subject_of_type = core_eyalet
+					is_subject_of_type = commercial_enterprise
+					is_subject_of_type = trade_protectorate
+					# is_subject_of_type = hereditary_pronoia_subject_type
+					# is_subject_of_type = pronoia_subject_type
+					is_subject_of_type = cultural_sphere_of_influence_subject
+					is_subject_of_type = theodoro_personal_union
+					# is_subject_of_type = incorporated_vassal
+					is_subject_of_type = nahuatl_tributary
+					is_subject_of_type = european_colony
+					# is_subject_of_type = mongol_brother_realm
+					# is_subject_of_type = integrated_personal_union
+					# is_subject_of_type = soyurghal_subject_type
+
+					#additives
+					is_subject_of_type = crown_protector
+				}
+			}
+			NOT = { # MUST BE LOYAL TO THE CROWN
+				liberty_desire = 50 
+			}
+			has_opinion = { # OFC MUST HAVE POSITIVE OPINION
+				who = ROOT
+				value = 0
+			}
+			NOT = { # MUST BE SMALLER THAN US
+				development_of_overlord_fraction = 100.00 
+			}
+		}
+		ROOT = {
+			adm_power = 5
+			dip_power = 5
+			mil_power = 5
+	
+			government_rank = 2
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				FROM = { 
+					is_subject_of = ROOT # NEED TO BE OUR SUBJECT
+					NOT = { # MUST BE LOYAL TO THE CROWN
+						liberty_desire = 50 
+					}
+					has_opinion = { # OFC MUST HAVE POSITIVE OPINION
+						who = ROOT
+						value = 0
+					}
+					NOT = { # MUST BE SMALLER THAN US
+						development_of_overlord_fraction = 100.00 
+					}
+				}
+				NOT = { # CAN'T repeat
+					FROM = { is_subject_of_type = crown_protector }
+				}
+				ROOT = {
+					adm_power = 5
+					dip_power = 5
+					mil_power = 5
+				}
+			}
+
+			FROM = {
+				grant_independence = yes
+			}
+
+			create_subject = {
+				subject = FROM
+				subject_type = crown_protector
+			}
+
+			FROM = {
+				change_government = republic
+				add_government_reform = royal_protectorate_government
+				# change_religion = ROOT
+				# change_primary_culture = ROOT
+				add_adm_power = 10
+				add_dip_power = 10
+				add_mil_power = 10
+				add_treasury = 10
+				set_prestige_to_zero = yes
+				add_republican_tradition = 100
+			}			
+
+			ROOT ={
+				add_adm_power = -5
+				add_dip_power = -5
+				add_mil_power = -5
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+
+# Allow Crown Protector to dow
+grant_war_rights_royal = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = crown_protector
+			has_country_modifier = revoked_war_rights
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		FROM = {
+			remove_country_modifier = revoked_war_rights
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+# Disallow Crown Protector to dow
+revoke_war_rights_royal = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = crown_protector
+			NOT = { has_country_modifier = revoked_war_rights }
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		FROM = {
+			add_country_modifier = {
+				name = revoked_war_rights
+				duration = -1
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = revoked_our_right_to_war
+			}
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+# Allow Crown Protector to ally
+grant_ally_rights_royal = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = crown_protector
+			has_country_modifier = cannot_form_alliances_royal
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		FROM = {
+			remove_country_modifier = cannot_form_alliances_royal
+
+			add_government_reform = royal_protectorate_government
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+# Disallow Crown Protector to ally
+revoke_ally_rights_royal = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = crown_protector
+			NOT = { has_country_modifier = cannot_form_alliances_royal }
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		FROM = {
+			add_country_modifier = {
+				name = cannot_form_alliances_royal
+				duration = -1
+			}
+
+			add_opinion = {
+				who = ROOT
+				modifier = revoked_our_right_to_ally_royal
+			}
+			
+			add_government_reform = peaceful_royal_protectorate_government
+
+			every_ally = { break_alliance = PREV }
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}

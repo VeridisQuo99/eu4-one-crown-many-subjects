@@ -1,0 +1,5 @@
+crown_protector_modifier = {
+	land_forcelimit	= -4 # Base: 6 
+	naval_forcelimit = -9 # Base: 12
+	global_manpower = -6 # Base: 10
+}

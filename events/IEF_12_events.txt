@@ -1,0 +1,487 @@
+namespace = IEF
+
+country_event = {
+    id = IEF.12_crown_protector_system_update
+    hidden = yes
+    title = none
+    desc = none
+    picture = none
+    
+    trigger = {
+        has_subject_of_type = crown_protector
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    immediate = {
+        # 1. Tebaa Gelişmişliğini Hesapla
+        set_variable = {
+            which = total_development_calculation
+            value = 0
+        }
+
+        every_subject_country = {
+            limit = { is_subject_of_type = crown_protector }
+            export_to_variable = {
+                which = total_development_calculation
+                value = total_development 
+            }
+            ROOT = {
+                change_variable = {
+                    which = total_development_calculation
+                    which = PREV 
+                }
+            }
+        }
+
+        # 2. Hedef Kademeyi (Target Tier) Kesin Sınırlarla Belirle
+        set_variable = { which = cp_target_tier value = 0 }
+        
+        if = { limit = { check_variable = { which = total_development_calculation value = 0 } NOT = { check_variable = { which = total_development_calculation value = 100 } } } set_variable = { which = cp_target_tier value = 1 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 100 } NOT = { check_variable = { which = total_development_calculation value = 300 } } } set_variable = { which = cp_target_tier value = 2 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 300 } NOT = { check_variable = { which = total_development_calculation value = 500 } } } set_variable = { which = cp_target_tier value = 3 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 500 } NOT = { check_variable = { which = total_development_calculation value = 700 } } } set_variable = { which = cp_target_tier value = 4 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 700 } NOT = { check_variable = { which = total_development_calculation value = 900 } } } set_variable = { which = cp_target_tier value = 5 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 900 } NOT = { check_variable = { which = total_development_calculation value = 1100 } } } set_variable = { which = cp_target_tier value = 6 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 1100 } NOT = { check_variable = { which = total_development_calculation value = 1300 } } } set_variable = { which = cp_target_tier value = 7 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 1300 } NOT = { check_variable = { which = total_development_calculation value = 1500 } } } set_variable = { which = cp_target_tier value = 8 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 1500 } NOT = { check_variable = { which = total_development_calculation value = 1700 } } } set_variable = { which = cp_target_tier value = 9 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 1700 } NOT = { check_variable = { which = total_development_calculation value = 1900 } } } set_variable = { which = cp_target_tier value = 10 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 1900 } NOT = { check_variable = { which = total_development_calculation value = 2000 } } } set_variable = { which = cp_target_tier value = 11 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 2000 } NOT = { check_variable = { which = total_development_calculation value = 2500 } } } set_variable = { which = cp_target_tier value = 12 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 2500 } NOT = { check_variable = { which = total_development_calculation value = 3000 } } } set_variable = { which = cp_target_tier value = 13 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 3000 } NOT = { check_variable = { which = total_development_calculation value = 3500 } } } set_variable = { which = cp_target_tier value = 14 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 3500 } NOT = { check_variable = { which = total_development_calculation value = 4000 } } } set_variable = { which = cp_target_tier value = 15 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 4000 } NOT = { check_variable = { which = total_development_calculation value = 4500 } } } set_variable = { which = cp_target_tier value = 16 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 4500 } NOT = { check_variable = { which = total_development_calculation value = 5000 } } } set_variable = { which = cp_target_tier value = 17 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 5000 } NOT = { check_variable = { which = total_development_calculation value = 6000 } } } set_variable = { which = cp_target_tier value = 18 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 6000 } NOT = { check_variable = { which = total_development_calculation value = 7000 } } } set_variable = { which = cp_target_tier value = 19 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 7000 } NOT = { check_variable = { which = total_development_calculation value = 8000 } } } set_variable = { which = cp_target_tier value = 20 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 8000 } NOT = { check_variable = { which = total_development_calculation value = 9000 } } } set_variable = { which = cp_target_tier value = 21 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 9000 } NOT = { check_variable = { which = total_development_calculation value = 10000 } } } set_variable = { which = cp_target_tier value = 22 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 10000 } NOT = { check_variable = { which = total_development_calculation value = 11000 } } } set_variable = { which = cp_target_tier value = 23 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 11000 } NOT = { check_variable = { which = total_development_calculation value = 12000 } } } set_variable = { which = cp_target_tier value = 24 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 12000 } NOT = { check_variable = { which = total_development_calculation value = 13000 } } } set_variable = { which = cp_target_tier value = 25 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 13000 } NOT = { check_variable = { which = total_development_calculation value = 14000 } } } set_variable = { which = cp_target_tier value = 26 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 14000 } NOT = { check_variable = { which = total_development_calculation value = 15000 } } } set_variable = { which = cp_target_tier value = 27 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 15000 } NOT = { check_variable = { which = total_development_calculation value = 16000 } } } set_variable = { which = cp_target_tier value = 28 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 16000 } NOT = { check_variable = { which = total_development_calculation value = 17000 } } } set_variable = { which = cp_target_tier value = 29 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 17000 } NOT = { check_variable = { which = total_development_calculation value = 18000 } } } set_variable = { which = cp_target_tier value = 30 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 18000 } NOT = { check_variable = { which = total_development_calculation value = 19000 } } } set_variable = { which = cp_target_tier value = 31 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 19000 } NOT = { check_variable = { which = total_development_calculation value = 20000 } } } set_variable = { which = cp_target_tier value = 32 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 20000 } NOT = { check_variable = { which = total_development_calculation value = 25000 } } } set_variable = { which = cp_target_tier value = 33 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 25000 } NOT = { check_variable = { which = total_development_calculation value = 30000 } } } set_variable = { which = cp_target_tier value = 34 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 30000 } NOT = { check_variable = { which = total_development_calculation value = 35000 } } } set_variable = { which = cp_target_tier value = 35 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 35000 } NOT = { check_variable = { which = total_development_calculation value = 40000 } } } set_variable = { which = cp_target_tier value = 36 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 40000 } NOT = { check_variable = { which = total_development_calculation value = 45000 } } } set_variable = { which = cp_target_tier value = 37 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 45000 } NOT = { check_variable = { which = total_development_calculation value = 50000 } } } set_variable = { which = cp_target_tier value = 38 } }
+        if = { limit = { check_variable = { which = total_development_calculation value = 50000 } } set_variable = { which = cp_target_tier value = 39 } }
+
+        # 3. Güncelleme Gerekip Gerekmediğini Kontrol Et (Mevcut kademe hedeften farklı mı?)
+        set_variable = { which = cp_needs_update value = 0 }
+        
+        if = { limit = { check_variable = { which = cp_target_tier value = 1 } NOT = { check_variable = { which = cp_target_tier value = 2 } } NOT = { has_country_modifier = crown_protector_scaling_01 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 2 } NOT = { check_variable = { which = cp_target_tier value = 3 } } NOT = { has_country_modifier = crown_protector_scaling_02 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 3 } NOT = { check_variable = { which = cp_target_tier value = 4 } } NOT = { has_country_modifier = crown_protector_scaling_03 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 4 } NOT = { check_variable = { which = cp_target_tier value = 5 } } NOT = { has_country_modifier = crown_protector_scaling_04 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 5 } NOT = { check_variable = { which = cp_target_tier value = 6 } } NOT = { has_country_modifier = crown_protector_scaling_05 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 6 } NOT = { check_variable = { which = cp_target_tier value = 7 } } NOT = { has_country_modifier = crown_protector_scaling_06 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 7 } NOT = { check_variable = { which = cp_target_tier value = 8 } } NOT = { has_country_modifier = crown_protector_scaling_07 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 8 } NOT = { check_variable = { which = cp_target_tier value = 9 } } NOT = { has_country_modifier = crown_protector_scaling_08 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 9 } NOT = { check_variable = { which = cp_target_tier value = 10 } } NOT = { has_country_modifier = crown_protector_scaling_09 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 10 } NOT = { check_variable = { which = cp_target_tier value = 11 } } NOT = { has_country_modifier = crown_protector_scaling_10 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 11 } NOT = { check_variable = { which = cp_target_tier value = 12 } } NOT = { has_country_modifier = crown_protector_scaling_11 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 12 } NOT = { check_variable = { which = cp_target_tier value = 13 } } NOT = { has_country_modifier = crown_protector_scaling_12 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 13 } NOT = { check_variable = { which = cp_target_tier value = 14 } } NOT = { has_country_modifier = crown_protector_scaling_13 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 14 } NOT = { check_variable = { which = cp_target_tier value = 15 } } NOT = { has_country_modifier = crown_protector_scaling_14 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 15 } NOT = { check_variable = { which = cp_target_tier value = 16 } } NOT = { has_country_modifier = crown_protector_scaling_15 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 16 } NOT = { check_variable = { which = cp_target_tier value = 17 } } NOT = { has_country_modifier = crown_protector_scaling_16 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 17 } NOT = { check_variable = { which = cp_target_tier value = 18 } } NOT = { has_country_modifier = crown_protector_scaling_17 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 18 } NOT = { check_variable = { which = cp_target_tier value = 19 } } NOT = { has_country_modifier = crown_protector_scaling_18 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 19 } NOT = { check_variable = { which = cp_target_tier value = 20 } } NOT = { has_country_modifier = crown_protector_scaling_19 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 20 } NOT = { check_variable = { which = cp_target_tier value = 21 } } NOT = { has_country_modifier = crown_protector_scaling_20 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 21 } NOT = { check_variable = { which = cp_target_tier value = 22 } } NOT = { has_country_modifier = crown_protector_scaling_21 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 22 } NOT = { check_variable = { which = cp_target_tier value = 23 } } NOT = { has_country_modifier = crown_protector_scaling_22 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 23 } NOT = { check_variable = { which = cp_target_tier value = 24 } } NOT = { has_country_modifier = crown_protector_scaling_23 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 24 } NOT = { check_variable = { which = cp_target_tier value = 25 } } NOT = { has_country_modifier = crown_protector_scaling_24 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 25 } NOT = { check_variable = { which = cp_target_tier value = 26 } } NOT = { has_country_modifier = crown_protector_scaling_25 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 26 } NOT = { check_variable = { which = cp_target_tier value = 27 } } NOT = { has_country_modifier = crown_protector_scaling_26 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 27 } NOT = { check_variable = { which = cp_target_tier value = 28 } } NOT = { has_country_modifier = crown_protector_scaling_27 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 28 } NOT = { check_variable = { which = cp_target_tier value = 29 } } NOT = { has_country_modifier = crown_protector_scaling_28 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 29 } NOT = { check_variable = { which = cp_target_tier value = 30 } } NOT = { has_country_modifier = crown_protector_scaling_29 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 30 } NOT = { check_variable = { which = cp_target_tier value = 31 } } NOT = { has_country_modifier = crown_protector_scaling_30 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 31 } NOT = { check_variable = { which = cp_target_tier value = 32 } } NOT = { has_country_modifier = crown_protector_scaling_31 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 32 } NOT = { check_variable = { which = cp_target_tier value = 33 } } NOT = { has_country_modifier = crown_protector_scaling_32 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 33 } NOT = { check_variable = { which = cp_target_tier value = 34 } } NOT = { has_country_modifier = crown_protector_scaling_33 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 34 } NOT = { check_variable = { which = cp_target_tier value = 35 } } NOT = { has_country_modifier = crown_protector_scaling_34 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 35 } NOT = { check_variable = { which = cp_target_tier value = 36 } } NOT = { has_country_modifier = crown_protector_scaling_35 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 36 } NOT = { check_variable = { which = cp_target_tier value = 37 } } NOT = { has_country_modifier = crown_protector_scaling_36 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 37 } NOT = { check_variable = { which = cp_target_tier value = 38 } } NOT = { has_country_modifier = crown_protector_scaling_37 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 38 } NOT = { check_variable = { which = cp_target_tier value = 39 } } NOT = { has_country_modifier = crown_protector_scaling_38 } } set_variable = { which = cp_needs_update value = 1 } }
+        if = { limit = { check_variable = { which = cp_target_tier value = 39 } NOT = { has_country_modifier = crown_protector_scaling_39 } } set_variable = { which = cp_needs_update value = 1 } }
+
+        # 4. SADECE Kademe Değiştiyse Eski Modifier'ları Sil ve Doğru Olanı Ekle
+        if = {
+            limit = { check_variable = { which = cp_needs_update value = 1 } }
+            
+            ROOT = {
+                # Eski 51 kademeli sistemden kalma save'ler için 51'e kadar tam temizlik
+                remove_country_modifier = crown_protector_scaling_01
+                remove_country_modifier = crown_protector_merchant_scaling_01
+                remove_country_modifier = crown_protector_scaling_02
+                remove_country_modifier = crown_protector_merchant_scaling_02
+                remove_country_modifier = crown_protector_scaling_03
+                remove_country_modifier = crown_protector_merchant_scaling_03
+                remove_country_modifier = crown_protector_scaling_04
+                remove_country_modifier = crown_protector_merchant_scaling_04
+                remove_country_modifier = crown_protector_scaling_05
+                remove_country_modifier = crown_protector_merchant_scaling_05
+                remove_country_modifier = crown_protector_scaling_06
+                remove_country_modifier = crown_protector_merchant_scaling_06
+                remove_country_modifier = crown_protector_scaling_07
+                remove_country_modifier = crown_protector_merchant_scaling_07
+                remove_country_modifier = crown_protector_scaling_08
+                remove_country_modifier = crown_protector_merchant_scaling_08
+                remove_country_modifier = crown_protector_scaling_09
+                remove_country_modifier = crown_protector_merchant_scaling_09
+                remove_country_modifier = crown_protector_scaling_10
+                remove_country_modifier = crown_protector_merchant_scaling_10
+                remove_country_modifier = crown_protector_scaling_11
+                remove_country_modifier = crown_protector_merchant_scaling_11
+                remove_country_modifier = crown_protector_scaling_12
+                remove_country_modifier = crown_protector_merchant_scaling_12
+                remove_country_modifier = crown_protector_scaling_13
+                remove_country_modifier = crown_protector_merchant_scaling_13
+                remove_country_modifier = crown_protector_scaling_14
+                remove_country_modifier = crown_protector_merchant_scaling_14
+                remove_country_modifier = crown_protector_scaling_15
+                remove_country_modifier = crown_protector_merchant_scaling_15
+                remove_country_modifier = crown_protector_scaling_16
+                remove_country_modifier = crown_protector_merchant_scaling_16
+                remove_country_modifier = crown_protector_scaling_17
+                remove_country_modifier = crown_protector_merchant_scaling_17
+                remove_country_modifier = crown_protector_scaling_18
+                remove_country_modifier = crown_protector_merchant_scaling_18
+                remove_country_modifier = crown_protector_scaling_19
+                remove_country_modifier = crown_protector_merchant_scaling_19
+                remove_country_modifier = crown_protector_scaling_20
+                remove_country_modifier = crown_protector_merchant_scaling_20
+                remove_country_modifier = crown_protector_scaling_21
+                remove_country_modifier = crown_protector_merchant_scaling_21
+                remove_country_modifier = crown_protector_scaling_22
+                remove_country_modifier = crown_protector_merchant_scaling_22
+                remove_country_modifier = crown_protector_scaling_23
+                remove_country_modifier = crown_protector_merchant_scaling_23
+                remove_country_modifier = crown_protector_scaling_24
+                remove_country_modifier = crown_protector_merchant_scaling_24
+                remove_country_modifier = crown_protector_scaling_25
+                remove_country_modifier = crown_protector_merchant_scaling_25
+                remove_country_modifier = crown_protector_scaling_26
+                remove_country_modifier = crown_protector_merchant_scaling_26
+                remove_country_modifier = crown_protector_scaling_27
+                remove_country_modifier = crown_protector_merchant_scaling_27
+                remove_country_modifier = crown_protector_scaling_28
+                remove_country_modifier = crown_protector_merchant_scaling_28
+                remove_country_modifier = crown_protector_scaling_29
+                remove_country_modifier = crown_protector_merchant_scaling_29
+                remove_country_modifier = crown_protector_scaling_30
+                remove_country_modifier = crown_protector_merchant_scaling_30
+                remove_country_modifier = crown_protector_scaling_31
+                remove_country_modifier = crown_protector_merchant_scaling_31
+                remove_country_modifier = crown_protector_scaling_32
+                remove_country_modifier = crown_protector_merchant_scaling_32
+                remove_country_modifier = crown_protector_scaling_33
+                remove_country_modifier = crown_protector_merchant_scaling_33
+                remove_country_modifier = crown_protector_scaling_34
+                remove_country_modifier = crown_protector_merchant_scaling_34
+                remove_country_modifier = crown_protector_scaling_35
+                remove_country_modifier = crown_protector_merchant_scaling_35
+                remove_country_modifier = crown_protector_scaling_36
+                remove_country_modifier = crown_protector_merchant_scaling_36
+                remove_country_modifier = crown_protector_scaling_37
+                remove_country_modifier = crown_protector_merchant_scaling_37
+                remove_country_modifier = crown_protector_scaling_38
+                remove_country_modifier = crown_protector_merchant_scaling_38
+                remove_country_modifier = crown_protector_scaling_39
+                remove_country_modifier = crown_protector_merchant_scaling_39
+                # remove_country_modifier = crown_protector_scaling_40
+                # remove_country_modifier = crown_protector_merchant_scaling_40
+                # remove_country_modifier = crown_protector_scaling_41
+                # remove_country_modifier = crown_protector_merchant_scaling_41
+                # remove_country_modifier = crown_protector_scaling_42
+                # remove_country_modifier = crown_protector_merchant_scaling_42
+                # remove_country_modifier = crown_protector_scaling_43
+                # remove_country_modifier = crown_protector_merchant_scaling_43
+                # remove_country_modifier = crown_protector_scaling_44
+                # remove_country_modifier = crown_protector_merchant_scaling_44
+                # remove_country_modifier = crown_protector_scaling_45
+                # remove_country_modifier = crown_protector_merchant_scaling_45
+                # remove_country_modifier = crown_protector_scaling_46
+                # remove_country_modifier = crown_protector_merchant_scaling_46
+                # remove_country_modifier = crown_protector_scaling_47
+                # remove_country_modifier = crown_protector_merchant_scaling_47
+                # remove_country_modifier = crown_protector_scaling_48
+                # remove_country_modifier = crown_protector_merchant_scaling_48
+                # remove_country_modifier = crown_protector_scaling_49
+                # remove_country_modifier = crown_protector_merchant_scaling_49
+                # remove_country_modifier = crown_protector_scaling_50
+                # remove_country_modifier = crown_protector_merchant_scaling_50
+                # remove_country_modifier = crown_protector_scaling_51
+                # remove_country_modifier = crown_protector_merchant_scaling_51
+            }
+
+            if = { limit = { check_variable = { which = cp_target_tier value = 1 } NOT = { check_variable = { which = cp_target_tier value = 2 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_01 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_01 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 2 } NOT = { check_variable = { which = cp_target_tier value = 3 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_02 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_02 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 3 } NOT = { check_variable = { which = cp_target_tier value = 4 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_03 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_03 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 4 } NOT = { check_variable = { which = cp_target_tier value = 5 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_04 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_04 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 5 } NOT = { check_variable = { which = cp_target_tier value = 6 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_05 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_05 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 6 } NOT = { check_variable = { which = cp_target_tier value = 7 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_06 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_06 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 7 } NOT = { check_variable = { which = cp_target_tier value = 8 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_07 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_07 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 8 } NOT = { check_variable = { which = cp_target_tier value = 9 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_08 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_08 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 9 } NOT = { check_variable = { which = cp_target_tier value = 10 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_09 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_09 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 10 } NOT = { check_variable = { which = cp_target_tier value = 11 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_10 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_10 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 11 } NOT = { check_variable = { which = cp_target_tier value = 12 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_11 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_11 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 12 } NOT = { check_variable = { which = cp_target_tier value = 13 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_12 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_12 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 13 } NOT = { check_variable = { which = cp_target_tier value = 14 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_13 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_13 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 14 } NOT = { check_variable = { which = cp_target_tier value = 15 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_14 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_14 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 15 } NOT = { check_variable = { which = cp_target_tier value = 16 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_15 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_15 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 16 } NOT = { check_variable = { which = cp_target_tier value = 17 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_16 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_16 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 17 } NOT = { check_variable = { which = cp_target_tier value = 18 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_17 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_17 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 18 } NOT = { check_variable = { which = cp_target_tier value = 19 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_18 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_18 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 19 } NOT = { check_variable = { which = cp_target_tier value = 20 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_19 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_19 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 20 } NOT = { check_variable = { which = cp_target_tier value = 21 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_20 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_20 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 21 } NOT = { check_variable = { which = cp_target_tier value = 22 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_21 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_21 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 22 } NOT = { check_variable = { which = cp_target_tier value = 23 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_22 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_22 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 23 } NOT = { check_variable = { which = cp_target_tier value = 24 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_23 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_23 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 24 } NOT = { check_variable = { which = cp_target_tier value = 25 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_24 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_24 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 25 } NOT = { check_variable = { which = cp_target_tier value = 26 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_25 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_25 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 26 } NOT = { check_variable = { which = cp_target_tier value = 27 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_26 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_26 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 27 } NOT = { check_variable = { which = cp_target_tier value = 28 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_27 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_27 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 28 } NOT = { check_variable = { which = cp_target_tier value = 29 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_28 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_28 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 29 } NOT = { check_variable = { which = cp_target_tier value = 30 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_29 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_29 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 30 } NOT = { check_variable = { which = cp_target_tier value = 31 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_30 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_30 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 31 } NOT = { check_variable = { which = cp_target_tier value = 32 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_31 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_31 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 32 } NOT = { check_variable = { which = cp_target_tier value = 33 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_32 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_32 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 33 } NOT = { check_variable = { which = cp_target_tier value = 34 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_33 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_33 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 34 } NOT = { check_variable = { which = cp_target_tier value = 35 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_34 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_34 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 35 } NOT = { check_variable = { which = cp_target_tier value = 36 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_35 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_35 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 36 } NOT = { check_variable = { which = cp_target_tier value = 37 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_36 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_36 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 37 } NOT = { check_variable = { which = cp_target_tier value = 38 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_37 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_37 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 38 } NOT = { check_variable = { which = cp_target_tier value = 39 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_38 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_38 duration = -1 } } }
+            if = { limit = { check_variable = { which = cp_target_tier value = 39 } } ROOT = { add_country_modifier = { name = crown_protector_scaling_39 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_39 duration = -1 } } }
+        }
+    }
+    
+    option = {
+        name = "System Updated"
+    }
+}
+
+# Fail switch event to clear scaling modifiers if subject is lost
+country_event = {
+	id = IEF.13_clearing_crown_protector_debuff
+	hidden = yes
+	title = none
+	desc = none
+	picture = none
+	
+	trigger = {
+		OR = {
+            has_country_modifier = crown_protector_scaling_01
+            has_country_modifier = crown_protector_merchant_scaling_01
+            has_country_modifier = crown_protector_scaling_02
+            has_country_modifier = crown_protector_merchant_scaling_02
+            has_country_modifier = crown_protector_scaling_03
+            has_country_modifier = crown_protector_merchant_scaling_03
+            has_country_modifier = crown_protector_scaling_04
+            has_country_modifier = crown_protector_merchant_scaling_04
+            has_country_modifier = crown_protector_scaling_05
+            has_country_modifier = crown_protector_merchant_scaling_05
+            has_country_modifier = crown_protector_scaling_06
+            has_country_modifier = crown_protector_merchant_scaling_06
+            has_country_modifier = crown_protector_scaling_07
+            has_country_modifier = crown_protector_merchant_scaling_07
+            has_country_modifier = crown_protector_scaling_08
+            has_country_modifier = crown_protector_merchant_scaling_08
+            has_country_modifier = crown_protector_scaling_09
+            has_country_modifier = crown_protector_merchant_scaling_09
+            has_country_modifier = crown_protector_scaling_10
+            has_country_modifier = crown_protector_merchant_scaling_10
+            has_country_modifier = crown_protector_scaling_11
+            has_country_modifier = crown_protector_merchant_scaling_11
+            has_country_modifier = crown_protector_scaling_12
+            has_country_modifier = crown_protector_merchant_scaling_12
+            has_country_modifier = crown_protector_scaling_13
+            has_country_modifier = crown_protector_merchant_scaling_13
+            has_country_modifier = crown_protector_scaling_14
+            has_country_modifier = crown_protector_merchant_scaling_14
+            has_country_modifier = crown_protector_scaling_15
+            has_country_modifier = crown_protector_merchant_scaling_15
+            has_country_modifier = crown_protector_scaling_16
+            has_country_modifier = crown_protector_merchant_scaling_16
+            has_country_modifier = crown_protector_scaling_17
+            has_country_modifier = crown_protector_merchant_scaling_17
+            has_country_modifier = crown_protector_scaling_18
+            has_country_modifier = crown_protector_merchant_scaling_18
+            has_country_modifier = crown_protector_scaling_19
+            has_country_modifier = crown_protector_merchant_scaling_19
+            has_country_modifier = crown_protector_scaling_20
+            has_country_modifier = crown_protector_merchant_scaling_20
+            has_country_modifier = crown_protector_scaling_21
+            has_country_modifier = crown_protector_merchant_scaling_21
+            has_country_modifier = crown_protector_scaling_22
+            has_country_modifier = crown_protector_merchant_scaling_22
+            has_country_modifier = crown_protector_scaling_23
+            has_country_modifier = crown_protector_merchant_scaling_23
+            has_country_modifier = crown_protector_scaling_24
+            has_country_modifier = crown_protector_merchant_scaling_24
+            has_country_modifier = crown_protector_scaling_25
+            has_country_modifier = crown_protector_merchant_scaling_25
+            has_country_modifier = crown_protector_scaling_26
+            has_country_modifier = crown_protector_merchant_scaling_26
+            has_country_modifier = crown_protector_scaling_27
+            has_country_modifier = crown_protector_merchant_scaling_27
+            has_country_modifier = crown_protector_scaling_28
+            has_country_modifier = crown_protector_merchant_scaling_28
+            has_country_modifier = crown_protector_scaling_29
+            has_country_modifier = crown_protector_merchant_scaling_29
+            has_country_modifier = crown_protector_scaling_30
+            has_country_modifier = crown_protector_merchant_scaling_30
+            has_country_modifier = crown_protector_scaling_31
+            has_country_modifier = crown_protector_merchant_scaling_31
+            has_country_modifier = crown_protector_scaling_32
+            has_country_modifier = crown_protector_merchant_scaling_32
+            has_country_modifier = crown_protector_scaling_33
+            has_country_modifier = crown_protector_merchant_scaling_33
+            has_country_modifier = crown_protector_scaling_34
+            has_country_modifier = crown_protector_merchant_scaling_34
+            has_country_modifier = crown_protector_scaling_35
+            has_country_modifier = crown_protector_merchant_scaling_35
+            has_country_modifier = crown_protector_scaling_36
+            has_country_modifier = crown_protector_merchant_scaling_36
+            has_country_modifier = crown_protector_scaling_37
+            has_country_modifier = crown_protector_merchant_scaling_37
+            has_country_modifier = crown_protector_scaling_38
+            has_country_modifier = crown_protector_merchant_scaling_38
+            has_country_modifier = crown_protector_scaling_39
+            has_country_modifier = crown_protector_merchant_scaling_39
+		}
+		NOT = { has_subject_of_type = crown_protector } 
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	immediate = {
+		# Remove previous scaling modifiers from overlord
+		ROOT = {
+		    remove_country_modifier = crown_protector_scaling_01
+            remove_country_modifier = crown_protector_merchant_scaling_01
+            remove_country_modifier = crown_protector_scaling_02
+            remove_country_modifier = crown_protector_merchant_scaling_02
+            remove_country_modifier = crown_protector_scaling_03
+            remove_country_modifier = crown_protector_merchant_scaling_03
+            remove_country_modifier = crown_protector_scaling_04
+            remove_country_modifier = crown_protector_merchant_scaling_04
+            remove_country_modifier = crown_protector_scaling_05
+            remove_country_modifier = crown_protector_merchant_scaling_05
+            remove_country_modifier = crown_protector_scaling_06
+            remove_country_modifier = crown_protector_merchant_scaling_06
+            remove_country_modifier = crown_protector_scaling_07
+            remove_country_modifier = crown_protector_merchant_scaling_07
+            remove_country_modifier = crown_protector_scaling_08
+            remove_country_modifier = crown_protector_merchant_scaling_08
+            remove_country_modifier = crown_protector_scaling_09
+            remove_country_modifier = crown_protector_merchant_scaling_09
+            remove_country_modifier = crown_protector_scaling_10
+            remove_country_modifier = crown_protector_merchant_scaling_10
+            remove_country_modifier = crown_protector_scaling_11
+            remove_country_modifier = crown_protector_merchant_scaling_11
+            remove_country_modifier = crown_protector_scaling_12
+            remove_country_modifier = crown_protector_merchant_scaling_12
+            remove_country_modifier = crown_protector_scaling_13
+            remove_country_modifier = crown_protector_merchant_scaling_13
+            remove_country_modifier = crown_protector_scaling_14
+            remove_country_modifier = crown_protector_merchant_scaling_14
+            remove_country_modifier = crown_protector_scaling_15
+            remove_country_modifier = crown_protector_merchant_scaling_15
+            remove_country_modifier = crown_protector_scaling_16
+            remove_country_modifier = crown_protector_merchant_scaling_16
+            remove_country_modifier = crown_protector_scaling_17
+            remove_country_modifier = crown_protector_merchant_scaling_17
+            remove_country_modifier = crown_protector_scaling_18
+            remove_country_modifier = crown_protector_merchant_scaling_18
+            remove_country_modifier = crown_protector_scaling_19
+            remove_country_modifier = crown_protector_merchant_scaling_19
+            remove_country_modifier = crown_protector_scaling_20
+            remove_country_modifier = crown_protector_merchant_scaling_20
+            remove_country_modifier = crown_protector_scaling_21
+            remove_country_modifier = crown_protector_merchant_scaling_21
+            remove_country_modifier = crown_protector_scaling_22
+            remove_country_modifier = crown_protector_merchant_scaling_22
+            remove_country_modifier = crown_protector_scaling_23
+            remove_country_modifier = crown_protector_merchant_scaling_23
+            remove_country_modifier = crown_protector_scaling_24
+            remove_country_modifier = crown_protector_merchant_scaling_24
+            remove_country_modifier = crown_protector_scaling_25
+            remove_country_modifier = crown_protector_merchant_scaling_25
+            remove_country_modifier = crown_protector_scaling_26
+            remove_country_modifier = crown_protector_merchant_scaling_26
+            remove_country_modifier = crown_protector_scaling_27
+            remove_country_modifier = crown_protector_merchant_scaling_27
+            remove_country_modifier = crown_protector_scaling_28
+            remove_country_modifier = crown_protector_merchant_scaling_28
+            remove_country_modifier = crown_protector_scaling_29
+            remove_country_modifier = crown_protector_merchant_scaling_29
+            remove_country_modifier = crown_protector_scaling_30
+            remove_country_modifier = crown_protector_merchant_scaling_30
+            remove_country_modifier = crown_protector_scaling_31
+            remove_country_modifier = crown_protector_merchant_scaling_31
+            remove_country_modifier = crown_protector_scaling_32
+            remove_country_modifier = crown_protector_merchant_scaling_32
+            remove_country_modifier = crown_protector_scaling_33
+            remove_country_modifier = crown_protector_merchant_scaling_33
+            remove_country_modifier = crown_protector_scaling_34
+            remove_country_modifier = crown_protector_merchant_scaling_34
+            remove_country_modifier = crown_protector_scaling_35
+            remove_country_modifier = crown_protector_merchant_scaling_35
+            remove_country_modifier = crown_protector_scaling_36
+            remove_country_modifier = crown_protector_merchant_scaling_36
+            remove_country_modifier = crown_protector_scaling_37
+            remove_country_modifier = crown_protector_merchant_scaling_37
+            remove_country_modifier = crown_protector_scaling_38
+            remove_country_modifier = crown_protector_merchant_scaling_38
+            remove_country_modifier = crown_protector_scaling_39
+            remove_country_modifier = crown_protector_merchant_scaling_39
+		}
+	}
+
+	option = {
+		name = "Accept the Burden"
+	}
+}
+
+# Intro event to explain the new merchant scaling system to the player
+country_event = {
+    id = IEF.14_crown_protector_introduction
+    title = IEF.14_crown_protector_introduction.t
+    desc = IEF.14_crown_protector_introduction.d
+    picture = ADMINISTRATION_eventPicture
+    
+    fire_only_once = yes
+    
+    trigger = {
+        ai = no
+    }
+
+    mean_time_to_happen = {
+        days = 2
+    }
+    
+    option = {
+        name = IEF.14_crown_protector_introduction.a
+    }
+}
