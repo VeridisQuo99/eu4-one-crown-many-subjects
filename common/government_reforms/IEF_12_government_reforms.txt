@@ -4,10 +4,7 @@ royal_protectorate_government = {
 	allow_normal_conversion = no
 	legacy_equivalent = noble_republic
 	potential = {
-		OR = {
-			has_reform = royal_protectorate_government
-			have_had_reform = royal_protectorate_government
-		}
+		has_government = crown_protectorate_gov
 	}
 	modifiers = {
 		# Unrest Boost
@@ -110,10 +107,7 @@ peaceful_royal_protectorate_government = {
 	allow_normal_conversion = no
 	legacy_equivalent = noble_republic
 	potential = {
-		OR = {
-			has_reform = peaceful_royal_protectorate_government
-			have_had_reform = peaceful_royal_protectorate_government
-		}
+		has_government = crown_protectorate_gov
 	}
 	modifiers = {
 		# Unrest Boost
