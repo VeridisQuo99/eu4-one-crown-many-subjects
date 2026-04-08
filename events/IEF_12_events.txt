@@ -11,9 +11,7 @@ country_event = {
         has_subject_of_type = crown_protector
     }
 
-    mean_time_to_happen = {
-        months = 1
-    }
+    is_triggered_only = yes
 
     immediate = {
         # 1. Tebaa Gelişmişliğini Hesapla
@@ -371,9 +369,7 @@ country_event = {
 		NOT = { has_subject_of_type = crown_protector } 
 	}
 
-	mean_time_to_happen = {
-		months = 3
-	}
+    is_triggered_only = yes
 
 	immediate = {
 		# Remove previous scaling modifiers from overlord

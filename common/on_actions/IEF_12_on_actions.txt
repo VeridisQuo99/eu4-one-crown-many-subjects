@@ -1,0 +1,6 @@
+on_yearly_pulse = {
+	events = {
+		IEF.12_crown_protector_system_update
+		IEF.13_clearing_crown_protector_debuff
+	}
+}
