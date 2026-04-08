@@ -1,7 +1,0 @@
-on_game_start = {
-	# Set the calculation variable
-	set_variable = {
-		name = total_development_calculation
-		value = 0
-	}
-}
