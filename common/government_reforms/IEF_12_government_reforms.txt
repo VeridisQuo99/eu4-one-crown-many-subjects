@@ -34,8 +34,8 @@ royal_protectorate_government = {
 		global_sailors_modifier = 0.025
 		land_forcelimit_modifier = 0.025
 		naval_forcelimit_modifier = 0.025
-		has_voc_indiamen = yes
-		allowed_voc_indiamen_fraction = 1
+		# has_voc_indiamen = yes
+		# allowed_voc_indiamen_fraction = 1
 	}
 	nation_designer_cost = 200
 	valid_for_nation_designer = yes
@@ -140,8 +140,8 @@ peaceful_royal_protectorate_government = {
 		global_sailors_modifier = 0.05
 		land_forcelimit_modifier = 0.05
 		naval_forcelimit_modifier = 0.05
-		has_voc_indiamen = yes
-		allowed_voc_indiamen_fraction = 1
+		# has_voc_indiamen = yes
+		# allowed_voc_indiamen_fraction = 1
 	}
 	nation_designer_cost = 200
 	valid_for_nation_designer = yes
@@ -163,6 +163,7 @@ peaceful_royal_protectorate_government = {
 		enables_estate_clergy = yes
 		is_merchant_republic = yes
 		elections_increase_factions_influence = yes
+		
 		cannot_form_alliances = yes
 	}
 	conditional = {
