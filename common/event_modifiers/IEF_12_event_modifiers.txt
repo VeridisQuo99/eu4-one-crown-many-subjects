@@ -1,11 +1,11 @@
-##################################################################################################
-# scriptable and usable for event-system below.
-##################################################################################################
-#
-
 cannot_form_alliances_royal = {
 	liberty_desire = 10
 }
+
+revoked_war_rights = {
+	liberty_desire = 10
+}
+
 # 0-2000 Dev Aralığı (Ekstra Sertleştirilmiş Erken Oyun)
 crown_protector_scaling_01 = { governing_capacity_modifier = -0.02 }   # 0-100 dev (-2.00%)
 crown_protector_scaling_02 = { governing_capacity_modifier = -0.05 }   # 100-300 dev (-5.00%)

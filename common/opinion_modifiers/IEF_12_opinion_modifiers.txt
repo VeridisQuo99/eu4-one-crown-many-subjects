@@ -2,3 +2,8 @@ revoked_our_right_to_ally_royal = {
 	opinion = -20
 	yearly_decay = 2
 }
+
+revoked_our_right_to_war = {
+	opinion = -20
+	yearly_decay = 1
+}
