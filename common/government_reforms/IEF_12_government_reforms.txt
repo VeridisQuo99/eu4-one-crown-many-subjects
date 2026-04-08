@@ -3,9 +3,6 @@ royal_protectorate_government = {
 	lock_level_when_selected = yes
 	allow_normal_conversion = no
 	legacy_equivalent = noble_republic
-	potential = {
-		has_government = crown_protectorate_gov
-	}
 	modifiers = {
 		# Unrest Boost
 		tolerance_heathen = 1
@@ -106,9 +103,6 @@ peaceful_royal_protectorate_government = {
 	lock_level_when_selected = yes
 	allow_normal_conversion = no
 	legacy_equivalent = noble_republic
-	potential = {
-		has_government = crown_protectorate_gov
-	}
 	modifiers = {
 		# Unrest Boost
 		tolerance_heathen = 1
