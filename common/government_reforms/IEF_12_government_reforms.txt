@@ -3,6 +3,13 @@ royal_protectorate_government = {
 	lock_level_when_selected = yes
 	allow_normal_conversion = no
 	legacy_equivalent = noble_republic
+	potential = {
+		OR = {
+			is_subject_of_type = crown_protector
+			has_reform = royal_protectorate_government
+			has_reform = peaceful_royal_protectorate_government
+		}
+	}
 	modifiers = {
 		# Unrest Boost
 		tolerance_heathen = 1
@@ -103,6 +110,13 @@ peaceful_royal_protectorate_government = {
 	lock_level_when_selected = yes
 	allow_normal_conversion = no
 	legacy_equivalent = noble_republic
+	potential = {
+		OR = {
+			is_subject_of_type = crown_protector
+			has_reform = royal_protectorate_government
+			has_reform = peaceful_royal_protectorate_government
+		}
+	}
 	modifiers = {
 		# Unrest Boost
 		tolerance_heathen = 1

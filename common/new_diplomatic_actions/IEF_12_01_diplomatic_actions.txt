@@ -102,7 +102,7 @@ establish_crown_protector = {
 			}
 
 			FROM = {
-				change_government = crown_protectorate_gov
+				change_government = republic
 				add_government_reform = royal_protectorate_government
 				# change_religion = ROOT
 				# change_primary_culture = ROOT
