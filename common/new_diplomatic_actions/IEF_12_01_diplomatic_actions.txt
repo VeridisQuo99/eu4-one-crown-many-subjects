@@ -108,15 +108,11 @@ establish_crown_protector = {
 			}
 
 			FROM = {
-				change_government = crown_protectorate_gov
-				# change_religion = ROOT
-				# change_primary_culture = ROOT
 				add_adm_power = 10
 				add_dip_power = 10
 				add_mil_power = 10
 				add_treasury = 10
 				set_prestige_to_zero = yes
-				add_republican_tradition = 100
 			}	
 		}
 	}
@@ -126,47 +122,15 @@ establish_crown_protector = {
 	}
 }
 
-
-# Allow Crown Protector to dow
-grant_war_rights_royal = {
+# Isolate Crown Protector (Hem Savaş Hem İttifak Haklarını Alır)
+isolate_crown_protector = {
 	category = influence
-
 	require_acceptance = no
 
 	is_visible = {
 		FROM = {
 			is_subject_of = ROOT
 			is_subject_of_type = crown_protector
-			has_country_modifier = revoked_war_rights
-		}
-	}
-	is_allowed = {
-		always = yes
-	}
-	on_accept = {
-		FROM = {
-			remove_country_modifier = revoked_war_rights
-		}
-	}
-	on_decline = {
-	}
-
-	ai_will_do = { # this is a trigger
-		always = no
-	}
-}
-
-# Disallow Crown Protector to dow
-revoke_war_rights_royal = {
-	category = influence
-
-	require_acceptance = no
-
-	is_visible = {
-		FROM = {
-			is_subject_of = ROOT
-			is_subject_of_type = crown_protector
-			NOT = { has_country_modifier = revoked_war_rights }
 		}
 	}
 	is_allowed = {
@@ -175,91 +139,47 @@ revoke_war_rights_royal = {
 	on_accept = {
 		FROM = {
 			add_country_modifier = {
-				name = revoked_war_rights
+				name = restricted_diplomatic_rights_royal
 				duration = -1
 			}
 			add_opinion = {
 				who = ROOT
-				modifier = revoked_our_right_to_war
+				modifier = isolated_by_overlord
 			}
-		}
-	}
-	on_decline = {
-	}
-
-	ai_will_do = { # this is a trigger
-		always = no
-	}
-}
-
-# Allow Crown Protector to ally
-grant_ally_rights_royal = {
-	category = influence
-
-	require_acceptance = no
-
-	is_visible = {
-		FROM = {
-			is_subject_of = ROOT
-			is_subject_of_type = crown_protector
-			has_country_modifier = cannot_form_alliances_royal
-		}
-	}
-	is_allowed = {
-		always = yes
-	}
-	on_accept = {
-		FROM = {
-			remove_country_modifier = cannot_form_alliances_royal
-
-			add_government_reform = royal_protectorate_government
-		}
-	}
-	on_decline = {
-	}
-
-	ai_will_do = { # this is a trigger
-		always = no
-	}
-}
-
-# Disallow Crown Protector to ally
-revoke_ally_rights_royal = {
-	category = influence
-
-	require_acceptance = no
-
-	is_visible = {
-		FROM = {
-			is_subject_of = ROOT
-			is_subject_of_type = crown_protector
-			NOT = { has_country_modifier = cannot_form_alliances_royal }
-		}
-	}
-	is_allowed = {
-		always = yes
-	}
-	on_accept = {
-		FROM = {
-			add_country_modifier = {
-				name = cannot_form_alliances_royal
-				duration = -1
-			}
-
-			add_opinion = {
-				who = ROOT
-				modifier = revoked_our_right_to_ally_royal
-			}
-			
-			add_government_reform = peaceful_royal_protectorate_government
-
 			every_ally = { break_alliance = PREV }
 		}
-	}
-	on_decline = {
-	}
 
-	ai_will_do = { # this is a trigger
-		always = no
+		create_subject = {
+			subject = FROM
+			subject_type = peaceful_crown_protector
+		}
 	}
+	ai_will_do = { always = no }
+}
+
+# Empower Crown Protector (Tüm Hakları Geri Verir)
+empower_crown_protector = {
+	category = influence
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = peaceful_crown_protector
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		FROM = {
+			remove_country_modifier = restricted_diplomatic_rights_royal
+		}
+
+		create_subject = {
+			subject = FROM
+			subject_type = crown_protector
+		}
+	}
+	ai_will_do = { always = no }
 }

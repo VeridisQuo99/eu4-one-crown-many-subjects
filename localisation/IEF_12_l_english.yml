@@ -1,5 +1,7 @@
 ﻿l_english:
   # Event Modifiers
+  restricted_diplomatic_rights_royal: "Diplomatic Isolation"
+  desc_restricted_diplomatic_rights_royal: "This subject's right to declare wars and form alliances has been strictly revoked by their overlord, greatly increasing their desire for liberty."
   crown_protector_scaling_01: "Crown Protector Burden"
   crown_protector_scaling_02: "Crown Protector Burden"
   crown_protector_scaling_03: "Crown Protector Burden"
@@ -78,18 +80,6 @@
   crown_protector_merchant_scaling_37: "Crown Protector Trade Network"
   crown_protector_merchant_scaling_38: "Crown Protector Trade Network"
   crown_protector_merchant_scaling_39: "Crown Protector Trade Network"
-  revoked_war_rights: "Restricted War Rights"
-  desc_revoked_war_rights: "This subject's right to declare war has been restricted by their overlord, increasing their desire for liberty."
-
-  # Government Reforms
-  royal_protectorate_government: "Royal Protectorate"
-  royal_protectorate_government_desc: "Established by the Crown and authorized to form alliances, the sole purpose of this company is to serve and protect it."
-  peaceful_royal_protectorate_government: "Isolated Royal Protectorate"
-  peaceful_royal_protectorate_government_desc: "Established by the Crown and NOT authorized to form alliances, the sole purpose of this company is to serve and protect it."
-
-  # Governments
-  crown_protectorate_gov: "Crown Protectorate"
-  crown_protectorate_gov_desc: "This nation is administered as a protectorate, deeply integrated into the diplomatic sphere of its overlord."
 
   # New Diplomatic Actions
   establish_crown_protector: "Establish a Protector of the Crown"
@@ -97,33 +87,20 @@
   establish_crown_protector_tooltip: "Establish a Protector of the Crown"
   establish_crown_protector_alert_tooltip: "Establish a Protector of the Crown"
   establish_crown_protector_desc: "By establishing a Protector of the Crown, we will create a loyal royal subject. So, it is recommended to use them as a continuation of your decentralized empire."
-  grant_war_rights_royal: "Allow Royal Protectorate to Declare Wars Autonomously"
-  grant_war_rights_royal_title: "Allow Royal Protectorate to Declare Wars Autonomously"
-  grant_war_rights_royal_tooltip: "Allow Royal Protectorate to Declare Wars Autonomously"
-  grant_war_rights_royal_alert_tooltip: "Allow Royal Protectorate to Declare Wars Autonomously"
-  grant_war_rights_royal_desc: "This decision will allow the subject to be able to wage wars autonomously."
-  revoke_war_rights_royal: "Disallow Royal Protectorate to Declare Wars Autonomously"
-  revoke_war_rights_royal_title: "Disallow Royal Protectorate to Declare Wars Autonomously"
-  revoke_war_rights_royal_tooltip: "Disallow Royal Protectorate to Declare Wars Autonomously"
-  revoke_war_rights_royal_alert_tooltip: "Disallow Royal Protectorate to Declare Wars Autonomously"
-  revoke_war_rights_royal_desc: "By removing their right to wage wars autonomously, their opinion of us will be reduced and they will gain liberty desire."
-  grant_ally_rights_royal: "Allow Royal Protectorate to Ally Autonomously"
-  grant_ally_rights_royal_title: "Allow Royal Protectorate to Ally Autonomously"
-  grant_ally_rights_royal_tooltip: "Allow Royal Protectorate to Ally Autonomously"
-  grant_ally_rights_royal_alert_tooltip: "Allow Royal Protectorate to Ally Autonomously"
-  grant_ally_rights_royal_desc: "This decision will allow the subject to be able form alliances with other nations."
-  revoke_ally_rights_royal: "Disallow Royal Protectorate to Ally Autonomously"
-  revoke_ally_rights_royal_title: "Disallow Royal Protectorate to Ally Autonomously"
-  revoke_ally_rights_royal_tooltip: "Disallow Royal Protectorate to Ally Autonomously"
-  revoke_ally_rights_royal_alert_tooltip: "Disallow Royal Protectorate to Ally Autonomously"
-  revoke_ally_rights_royal_desc: "By removing their right to form alliances autonomously, their opinion of us will be reduced and they will gain liberty desire."
+  isolate_crown_protector: "Isolate Crown Protector"
+  isolate_crown_protector_title: "Isolate Crown Protector"
+  isolate_crown_protector_tooltip: "Isolate Crown Protector"
+  isolate_crown_protector_alert_tooltip: "Isolate Crown Protector"
+  isolate_crown_protector_desc: "By revoking their right to wage wars and form alliances autonomously, we will completely isolate them. Their opinion of us will be drastically reduced and they will gain a significant amount of liberty desire."
+  empower_crown_protector: "Restore Diplomatic Rights"
+  empower_crown_protector_title: "Restore Diplomatic Rights"
+  empower_crown_protector_tooltip: "Restore Diplomatic Rights"
+  empower_crown_protector_alert_tooltip: "Restore Diplomatic Rights"
+  empower_crown_protector_desc: "This decision will restore the subject's right to declare wars and form alliances autonomously, lifting their diplomatic isolation."
 
   # Opinion Modifiers
-  cannot_form_alliances_royal: "Blocking our alliance rights!"
-  cannot_form_alliances_royal_desc: "We have been robbed of our right to form autonomous alliances."
-  revoked_our_right_to_ally_royal: "Blocking our alliance rights!"
-  revoked_our_right_to_ally_royal_desc: "We have been robbed of our right to form autonomous alliances."
-  revoked_our_right_to_war: "Revoked Right to War"
+  isolated_by_overlord: "Imposed Diplomatic Isolation"
+  isolated_by_overlord_desc: "We have been completely stripped of our autonomous diplomatic rights."
 
   # Static Modifiers
   crown_protector_modifier: "Royal Protector Base Modifier"
@@ -136,6 +113,12 @@
   crown_protector_title: "Protector of the Crown"
   crown_protector_title_plural: "Protectors of the Crown"
   is_crown_protector: "Is Protector of the Crown"
+  peaceful_crown_protector: "Isolated Crown Protector"
+  peaceful_crown_protector_long_desc: "Isolated Crown Protector is a loyal servant of the Crown with restricted diplomatic privileges.\n"
+  peaceful_crown_protector_is_our: "$NAME|Y$ is an Isolated Crown Protector of us"
+  peaceful_crown_protector_title: "Isolated Crown Protector"
+  peaceful_crown_protector_title_plural: "Isolated Crown Protectors"
+  is_peaceful_crown_protector: "Is Isolated Crown Protector"
 
   # Events
   IEF.12_crown_protector_system_update.t: "The Burden of Protection"
@@ -143,4 +126,8 @@
   IEF.12_crown_protector_system_update.a: "System Updated"
   IEF.14_crown_protector_introduction.t: "New Subject Mechanics: Crown Protectors"
   IEF.14_crown_protector_introduction.d: "A dynamic scaling system is in effect for the 'Crown Protector' subject type. As the total development of your Crown Protectors increases, two background systems will actively scale your country's modifiers:\n\n§RAdministrative Burden:§!\nGoverning your subjects requires extensive administrative oversight. Based on their total development, a scaling penalty will be applied to your Governing Capacity. This penalty hits aggressively in the early stages of your expansion—reducing your capacity by up to 35% at just 2,000 development. It continues to grow steadily as your subjects expand, scaling up to a crushing maximum of -99% Governing Capacity.\n\n§GTrade Dominance:§!\nTo offset the administrative burden, you will extract significant economic value from these subjects in the form of extra Merchants. The growth rate of this bonus slows down as your subjects grow larger:\n- 0 to 100 Dev: +1 Merchant\n- Up to 2,000 Dev: +1 Merchant per 200 Dev\n- Up to 5,000 Dev: +1 Merchant per 500 Dev\n- Up to 20,000 Dev: +1 Merchant per 1,000 Dev\n- Up to 50,000 Dev: +1 Merchant per 5,000 Dev\nThis system provides a maximum of 39 additional Merchants at 50,000+ development.\n\nThese modifiers are recalculated dynamically. Balance your empire's administrative limits against the lucrative trade opportunities your subjects provide."
-  IEF.14_crown_protector_introduction.a: "Understood."
+  IEF.14_crown_protector_introduction.a: "Understood." 
+  IEF.15_crown_protector_update.t: "Crown Protector Network Updated"
+  IEF.15_crown_protector_update.d: "My liege, the latest reports from our Crown Protectors have arrived. Their total development and economic output have crossed a new threshold over the past year.\n\nOur administrative network and trade routes have been automatically adjusted to reflect their new size."
+  IEF.15_crown_protector_update.a: "Excellent."
+  IEF.15_crown_protector_update_tt: "Our Governing Capacity and Merchant modifiers from Crown Protectors have been scaled to a new tier."

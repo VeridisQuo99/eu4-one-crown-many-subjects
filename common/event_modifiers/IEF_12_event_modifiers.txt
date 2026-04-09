@@ -1,9 +1,5 @@
-cannot_form_alliances_royal = {
-	liberty_desire = 10
-}
-
-revoked_war_rights = {
-	liberty_desire = 10
+restricted_diplomatic_rights_royal = {
+	liberty_desire = 20
 }
 
 # 0-2000 Dev Aralığı (Ekstra Sertleştirilmiş Erken Oyun)

@@ -269,6 +269,16 @@ country_event = {
             if = { limit = { check_variable = { which = cp_target_tier value = 37 } NOT = { check_variable = { which = cp_target_tier value = 38 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_37 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_37 duration = -1 } } }
             if = { limit = { check_variable = { which = cp_target_tier value = 38 } NOT = { check_variable = { which = cp_target_tier value = 39 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_38 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_38 duration = -1 } } }
             if = { limit = { check_variable = { which = cp_target_tier value = 39 } } ROOT = { add_country_modifier = { name = crown_protector_scaling_39 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_39 duration = -1 } } }
+        
+            if = { limit = { check_variable = { which = cp_target_tier value = 38 } NOT = { check_variable = { which = cp_target_tier value = 39 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_38 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_38 duration = -1 } } }
+                if = { limit = { check_variable = { which = cp_target_tier value = 39 } } ROOT = { add_country_modifier = { name = crown_protector_scaling_39 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_39 duration = -1 } } }
+                
+                # --- YENİ EKLENTİ BURAYA GELECEK ---
+                ROOT = {
+                    country_event = { id = IEF.15 }
+                }
+                # -----------------------------------
+            }
         }
     }
     
@@ -480,4 +490,18 @@ country_event = {
     option = {
         name = IEF.14_crown_protector_introduction.a
     }
+}
+
+country_event = {
+	id = IEF.15
+	title = IEF.15_crown_protector_update.t
+	desc = IEF.15_crown_protector_update.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = IEF.15_crown_protector_update.a
+		custom_tooltip = IEF.15_crown_protector_update_tt
+	}
 }

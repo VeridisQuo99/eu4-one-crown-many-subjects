@@ -1,9 +1,0 @@
-crown_protectorate_gov = {
-	color = { 220 220 220 }
-	basic_reform = royal_protectorate_government
-	reform_levels = {
-		tier_1 = {
-			reforms = { royal_protectorate_government peaceful_royal_protectorate_government }
-		}
-	}
-}
