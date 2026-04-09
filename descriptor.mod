@@ -6,5 +6,6 @@ tags={
 	"Utilities"
 }
 name="Loyal Protectorates (Unlimited Vassals)"
+picture="thumbnail.png"
 supported_version="1.37.*.*"
 remote_file_id="3241077748"
