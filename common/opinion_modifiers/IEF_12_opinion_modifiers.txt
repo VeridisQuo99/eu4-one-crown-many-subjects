@@ -1,4 +1,4 @@
 isolated_by_overlord = {
-	opinion = -40
-	yearly_decay = 1
+	opinion = -50
+	yearly_decay = 2.5
 }

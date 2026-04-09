@@ -1,5 +1,5 @@
 restricted_diplomatic_rights_royal = {
-	liberty_desire = 20
+	liberty_desire = 15
 }
 
 # 0-2000 Dev Aralığı (Ekstra Sertleştirilmiş Erken Oyun)

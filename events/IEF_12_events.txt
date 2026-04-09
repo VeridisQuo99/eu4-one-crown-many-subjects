@@ -285,10 +285,9 @@ country_event = {
 # Fail switch event to clear scaling modifiers if subject is lost
 country_event = {
 	id = IEF.13_clearing_crown_protector_debuff
-	hidden = yes
-	title = none
-	desc = none
-	picture = none
+	title = IEF.13_clearing_crown_protector_debuff.t
+	desc = IEF.13_clearing_crown_protector_debuff.d
+	picture = DIPLOMACY_eventPicture
 	
 	trigger = {
 		OR = {
@@ -461,7 +460,7 @@ country_event = {
 	}
 
 	option = {
-		name = "Accept the Burden"
+		name = IEF.13_clearing_crown_protector_debuff.a
 	}
 }
 
@@ -487,6 +486,7 @@ country_event = {
     }
 }
 
+# Update event to explain the changes to the player
 country_event = {
 	id = IEF.15
 	title = IEF.15_crown_protector_update.t
