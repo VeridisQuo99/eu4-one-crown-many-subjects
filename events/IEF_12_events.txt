@@ -269,15 +269,10 @@ country_event = {
             if = { limit = { check_variable = { which = cp_target_tier value = 37 } NOT = { check_variable = { which = cp_target_tier value = 38 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_37 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_37 duration = -1 } } }
             if = { limit = { check_variable = { which = cp_target_tier value = 38 } NOT = { check_variable = { which = cp_target_tier value = 39 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_38 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_38 duration = -1 } } }
             if = { limit = { check_variable = { which = cp_target_tier value = 39 } } ROOT = { add_country_modifier = { name = crown_protector_scaling_39 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_39 duration = -1 } } }
-        
-            if = { limit = { check_variable = { which = cp_target_tier value = 38 } NOT = { check_variable = { which = cp_target_tier value = 39 } } } ROOT = { add_country_modifier = { name = crown_protector_scaling_38 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_38 duration = -1 } } }
-                if = { limit = { check_variable = { which = cp_target_tier value = 39 } } ROOT = { add_country_modifier = { name = crown_protector_scaling_39 duration = -1 } add_country_modifier = { name = crown_protector_merchant_scaling_39 duration = -1 } } }
-                
-                # --- YENİ EKLENTİ BURAYA GELECEK ---
-                ROOT = {
-                    country_event = { id = IEF.15 }
-                }
-                # -----------------------------------
+      
+            # --- YENİ EKLENTİ ---
+            ROOT = {
+                country_event = { id = IEF.15 }
             }
         }
     }
