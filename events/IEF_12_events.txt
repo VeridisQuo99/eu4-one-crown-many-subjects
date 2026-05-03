@@ -8,7 +8,10 @@ country_event = {
     picture = none
     
     trigger = {
-        has_subject_of_type = crown_protector
+        OR = {
+            has_subject_of_type = crown_protector
+            has_subject_of_type = peaceful_crown_protector
+        }
     }
 
     is_triggered_only = yes
@@ -21,7 +24,12 @@ country_event = {
         }
 
         every_subject_country = {
-            limit = { is_subject_of_type = crown_protector }
+            limit = {
+                OR = {
+                    is_subject_of_type = crown_protector
+                    is_subject_of_type = peaceful_crown_protector
+                }
+            }
             export_to_variable = {
                 which = total_development_calculation
                 value = total_development 
@@ -370,7 +378,12 @@ country_event = {
             has_country_modifier = crown_protector_scaling_39
             has_country_modifier = crown_protector_merchant_scaling_39
 		}
-		NOT = { has_subject_of_type = crown_protector } 
+		NOT = {
+            OR = {
+                has_subject_of_type = crown_protector
+                has_subject_of_type = peaceful_crown_protector
+            }
+        } 
 	}
 
     is_triggered_only = yes

@@ -44,6 +44,7 @@ establish_crown_protector = {
 
 					#additives
 					is_subject_of_type = crown_protector
+					is_subject_of_type = peaceful_crown_protector
 				}
 			}
 			NOT = { # MUST BE LOYAL TO THE CROWN
@@ -83,7 +84,12 @@ establish_crown_protector = {
 					}
 				}
 				NOT = { # CAN'T repeat
-					FROM = { is_subject_of_type = crown_protector }
+					FROM = {
+                        OR = {
+                            is_subject_of_type = crown_protector
+                            is_subject_of_type = peaceful_crown_protector
+                        }
+                    }
 				}
 				ROOT = {
 					adm_power = 5
