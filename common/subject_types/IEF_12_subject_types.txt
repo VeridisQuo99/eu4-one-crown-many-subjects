@@ -136,8 +136,8 @@ peaceful_crown_protector = {
 	should_quit_wars_on_activation = yes
 	overlord_can_attack = no
 	overlord_enforce_peace_attacking = yes
-	can_be_annexed = no
-	can_be_integrated = yes
+	can_be_annexed = yes
+	can_be_integrated = no
 	annex_cost_per_development = 6.0
 
 	trust_on_start = 100
